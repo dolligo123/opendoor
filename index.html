@@ -257,9 +257,9 @@
   <div class="dolligo-wrap">
     <div class="title-wrap">
       <h2 class="icon title reveal">여성 자영업자 폭력 보고서 열린 문</h2>
-      <a href="" class="icon scroll-btn">아래로</a>
+      <a href="goto-contents" class="icon scroll-btn">아래로</a>
     </div>
-    <div class="contents-wrap">
+    <div class="contents-wrap" id="goto-contents">
       <div class="section col-10">
         <h2 class="article-tit hahmlet reveal">“스토커의 눈빛, 정말 소름 끼쳐요... <br>(후기) 댓글 감사해요”</h2>
         <h3 class="article-subtit reveal">[열린 문 - 여성 자영업자 폭력 보고서 ①] ‘망원동 좋아요’에 올라온 이야기</h3>
@@ -340,8 +340,8 @@
           <span class="comment">클릭하고 후기글을 확인해 보세요</span>
         </div>
       </div>
-      <div class="section">
-        <div class="scroll-box reveal" id="link-1">
+      <div class="section" id="link-1">
+        <div class="scroll-box reveal">
           <h3>좋은 정보와 조언, 댓글, 진심 감사합니다.</h3>
           <ul class="date">
             <li>망원동 B</li>
@@ -451,7 +451,7 @@
       if (target.length) {
         event.preventDefault();
         $('html, body').animate({
-          scrollTop: target.offset().top - 100
+          scrollTop: target.offset().top
         }, 500);
       }
     });
