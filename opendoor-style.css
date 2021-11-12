@@ -323,10 +323,14 @@ td {
 
 @media (min-width: 1024px) {
   .dolligo-wrap .article-tit{
-    font-size: 40px;
+    font-size: 45px;
+    margin-bottom: 24px;
   }
   .dolligo-wrap .article-subtit{
     font-size: 18px;
+  }
+  .dolligo-wrap .article-subtit + p{
+    margin-bottom: 100px;
   }
   .dolligo-wrap .section{
     margin-bottom: 0;
