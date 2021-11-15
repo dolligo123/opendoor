@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600&family=Noto+Sans+KR:wght@400;700&Noto+Serif+KR&display=swap"
+    rel="stylesheet">
+  <title>열린 문 여성 자영업자 폭력 보고서 - 오마이뉴스 특별기획</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="//ojsimg.ohmynews.com/special/templete-serial/style.css" />
+  <link rel="stylesheet" type="text/css" href="//ojsimg.ohmynews.com/special/templete-serial/article.css" />
+  <link rel="stylesheet" href="//ojsimg.ohmynews.com/css/mobile_2015/twentytwenty.css" type="text/css" />
+  <link rel="stylesheet" href="//ojsimg.ohmynews.com/css/cardnews/mslide.css" type="text/css" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="//ojsimg.ohmynews.com/special/templete-serial/bootstrap.css" />
+  <!-- common style -->
+  <link rel="stylesheet" type="text/css" href="//ojsimg.ohmynews.com/special/layer.css" />
+  <link rel="stylesheet" href="//ojsimg.ohmynews.com/js/swiper.min.css" />
+  <!-- font style -->
+  <link href="http://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet" />
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet" />
+  <script type="text/javascript" src="//ojsimg.ohmynews.com/js/com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript" src="//ojsimg.ohmynews.com/special/templete-serial/js/bootstrap.js"></script>
+  <script type="text/javascript" src="//ojsimg.ohmynews.com/special/templete-serial/js/nivo-lightbox.js"></script>
+  <script type="text/javascript" src="//ojsimg.ohmynews.com/special/templete-serial/js/jquery.isotope.js"></script>
+  <script type="text/javascript" src="//ojsimg.ohmynews.com/special/templete-serial/js/main.js"></script>
+  <!-- 디자인 클래스 추가 -->
+  <script>
+    $(function () {
+      //운영체제별 클래스 추가
+      if (navigator.userAgent.indexOf("Mac OS X") != -1) {
+        $("body").addClass("mac");
+      }
+      else {
+        $("body").addClass("pc");
+      }
+      //ie인 경우 클래스 추가
+      var agent = navigator.userAgent.toLowerCase();
+      if ((navigator.appName == "Netscape" && agent.indexOf("trident") != -1) || (agent.indexOf("msie") != -1)) {
+        $("body").addClass("ie");
+      }
+      if ($("input[id$='hdnSRS_CD']").val() == "0000012335" && !(navigator.appName == "Netscape" && agent.indexOf("trident") != -1) || (agent.indexOf("msie") != -1))//교제살인로고 IE색깔 검은색
+      {
+        $(".navbar-brand").attr("class", "navbar-brand b page-scroll");
+        $(".family").addClass("b");
+      }
+    });
+  </script>
+  <!-- 스크롤 프로그레스 세팅 -->
+  <script>
+    $(function () {
+      //스크롤 프로그레스바
+      window.onscroll = function () {
+        myFunction()
+      };
+      // navbar-default 영역과 동일한 위치에서 나타남
+      $(window).bind("scroll", function () {
+        var topHeader = $("#header").height();
+        if ($(window).scrollTop() > topHeader) {
+          $(".progress-container").css("display", "block");
+          $(".navbar-default").addClass("on");
+        } else {
+          $(".progress-container").css("display", "none");
+          $(".navbar-default").removeClass("on");
+        }
+      });
+      //연재버튼 본문 영역에서만 노출
+      var currentScrollTop = 0;
+      window.onload = function () {
+        scrollController();
+        $(window).on("scroll", function () {
+          scrollController();
+        });
+      }
+
+      // 사진설명 가로 맞추기
+      var bMobile = IsMobile();
+      $(".photo_box").each(function () {
+        if (!bMobile && $(this).find("img").length && $(this).find("p.desc").length) {
+          var pWidth = $(this).find("img").css("width").replace("px", "");
+          if (pWidth != "" && pWidth != "0") {
+            var v = parseInt(pWidth);
+            if (v > 0 && v < 620) {
+              var m = Math.round((620 - v) / 2) + 12;
+              $(this).find("p.desc").css("padding-left", m);
+              $(this).find("p.desc").css("padding-right", m);
+            }
+          }
+        }
+      });
+    });
+
+    function myFunction() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
+    }
+
+    function scrollController() {
+      var st = $(window).scrollTop();
+      var atcE = $(".hashtag").offset().top;
+      var atcT = $(".atc_intro_header").height();
+      if (st > atcT && st < atcE) {
+        $(".serial-nav").css("opacity", "1");
+      } else {
+        $(".serial-nav").css("opacity", "0");
+      }
+    }
+  </script>
+  <script type="text/javascript" src="//ojsimg.ohmynews.com/js/swiper.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      // 클립보드 복사
+      var clipboard = new Clipboard(".cssClip");
+      // 기자 슬라이드
+      var swiper_rpt = new Swiper('.profile-sl', {
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        spaceBetween: 46,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }
+      });
+    });
+  </script>
+  <!-- 이공이공 열린문 스타일-->
+  <link rel="stylesheet" href="opendoor-style.css">
+</head>
+
+<body>
+  <!-- s: 네비게이션 -->
+  <nav id="submenu" class="navbar navbar-default navbar-fixed-top">
+    <!-- display -->
+    <div class="container">
+      <div class="navbar-header">
+        <a href="javascript:void(0);" onclick="GoNews(); return false;" class="navbar-brand page-scroll">오마이뉴스</a>
+        <!-- <a href="index.html" class="special-title"><strong>열린 문</strong>여성 자영업자 폭력 보고서</a> -->
+        <a href="index.html" class="serially_titl"><span class="tt01">열린 문</span><span class="tt02">여성 자영업자 폭력
+            보고서</span></a>
+        <a href="javascript:void(0);" class="icon family" onclick="NotScroll_LayerShow('cssFamily')">패밀리사이트</a>
+      </div>
+    </div>
+    <!-- on display -->
+    <div class="sticky_bar clearfx">
+      <div class="atc_container">
+        <a href="/NWS_Web/Event/premium/index.aspx?pSRS_CD=0000012335" class="serially_titl"><span class="tt02">여성 자영업자
+            폭력 보고서 열린 문</span></a>
+        <a href="/NWS_Web/View/at_pg.aspx?CNTN_CD=A0002674982" class="article_titl">
+          <span class="number">2</span><span class="s-title">여성 사장 10명 중 7명, 젠더폭력 공포 느낀다</span>
+        </a>
+        <ul class="state clearfx">
+          <li><button class="re_w icon" onclick="GotoComment();return false;">댓글</button></li>
+          <li><button class="fb_w on icon" onclick="SnsShare('facebook', 'A0002674982'); return false;">페이스북</button>
+          </li>
+          <li><button class="kt_w icon" onclick="sendKaKaoLink('A0002674982');">카카오톡</button></li>
+          <li><button class="btn_more_w icon" onclick="NotScroll_LayerShow('cssShareLayer'); return false;">공유</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+  </nav>
+  <!-- s: 레이어 패밀리사이트 -->
+  <div class="layer cssFamily" style="display: none">
+    <div class="layer_family">
+      <div class="head">
+        <h2>패밀리사이트</h2>
+        <button class="icon close_b" onclick="NotScroll_LayerClose('cssFamily'); return false;">닫기</button>
+      </div>
+      <ul id="ulFamily">
+        <li><a href="javascript:void(0);" class="icon news_logo" onclick="GoNews();">오마이뉴스</a> </li>
+        <li><a href="http://star.ohmynews.com/" class="icon star_logo" onclick="GoNews();">오마이스타</a> </li>
+        <li><a href="javascript:void(0);" class="icon tv_logo" onclick="GoTv();">오마이TV</a> </li>
+        <li><a href="javascript:void(0);" class="icon photo_logo" onclick="GoPhoto();">오마이포토</a> </li>
+        <li><a href="javascript:void(0);" class="icon club_logo" onclick="GoSupport();">10만인클럽</a> </li>
+        <li class="app">
+          <a href="javascript:void(0);" onclick="checkOmnAppInstall();"><span
+              class="icon omn"></span><strong>오마이뉴스<em>APP</em></strong></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- s: 레이어 공유 -->
+  <div class="layer cssShareLayer" style="display: none;">
+    <div class="layer_share">
+      <div class="head">
+        <h2>공유하기</h2>
+        <button class="icon close_b" onclick="NotScroll_LayerClose('cssShareLayer'); return false;">닫기</button>
+      </div>
+      <div class="contents">
+        <strong>열흘에 1명, 사귀던 남자에게 죽었다</strong>
+        <ul class="clearfx">
+          <li>
+            <button onclick="SnsShare('facebook', 'A0002674982'); return false;">
+              <span class="icon fb_c"></span>
+              <em>페이스북</em>
+            </button>
+          </li>
+          <li>
+            <button onclick="SnsShare('twitter', 'A0002674982'); return false;">
+              <span class="icon tw_c"></span>
+              <em>트위터</em>
+            </button>
+          </li>
+          <li>
+            <button onclick="sendKaKaoLink('A0002674982'); return false;">
+              <span class="icon kt_c"></span>
+              <em>카카오톡</em>
+            </button>
+          </li>
+          <li>
+            <button onclick="SnsShare('kas', 'A0002674982'); return false;">
+              <span class="icon ks_c"></span>
+              <em>카카오스토리</em>
+            </button>
+          </li>
+          <li>
+            <button onclick="sns_band('A0002674982'); return false;">
+              <span class="icon band"></span>
+              <em>밴드</em>
+            </button>
+          </li>
+          <li>
+            <a id="aMail" href="#">
+              <span class="icon mail_c"></span>
+              <em>메일</em>
+            </a>
+          </li>
+        </ul>
+        <div class="copyurl">
+          <a id="txtShortUrl" class="url" href="http://omn.kr/1ovfm" onclick="return false;">http://omn.kr/1ovfm</a>
+          <button class="btn cssClip" data-clipboard-text="http://omn.kr/1ovfm"
+            onclick="alert('주소가 복사되었습니다.\n원하는 곳에 붙여넣기 하세요.'); return false;">URL복사</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- s: 레이어 스크랩 -->
+  <div class="poplayer cssScrapLayer" style="display:none;">
+    <div class="contents">
+      <div class="head">
+        <button class="icon close_b" onclick="NotScroll_LayerClose('cssScrapLayer'); return false;">닫기</button>
+      </div>
+      <strong>기사를 스크랩했습니다.<br>스크랩 페이지로 이동 하시겠습니까?</strong>
+      <div class="article_btns">
+        <button class="line mgr5" onclick="NotScroll_LayerClose('cssScrapLayer'); return false;">취소</button>
+        <button onclick="GoScrap(); return false;" class="full mgl5">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 돌리고 콘텐츠 추가 영역-->
+  <div class="dolligo-wrap">
+    <div class="article-title-wrap">
+      <img src="./images/img-article-title.png" alt="열린 문 이미지">
+      <h2 class="hahmlet reveal">여성 사장 10명 중 7명,<br>젠더폭력 공포 느낀다</h2>
+      <h3 class="reveal">[열린 문 - 여성 자영업자 폭력 보고서 ②] 이웃 동네 사장님 102명 만나 물었더니...</h3>
+      <a href="goto-contents" class="icon scroll-btn">아래로</a>
+    </div>
+    <div class="contents-wrap" id="goto-contents">
+      <div class="article-wrap">
+        <div class="editors">단순 업무방해, 주취폭력이 아니다. 이것은 젠더폭력이다. 여성 자영업자 102명을 만났다. 여성 자영업자 대상 범죄 판결문 222건을 집중 분석했다. 우리가 마주한 현실은 ‘열린 문’의 공포였다. 가게의 문은 가해자에게도 열려 있어야 한다. 가해자가 마음먹으면 언제고 그 문을 열고 침범할 수 있다는 얘기다. 경찰도 법도, 열린 문을 막아설 안전장치가 되지 못했다. &lt;오마이뉴스&gt;는 여성 자영업자를 상대로 한 젠더폭력 실태를 최초로 분석․보도한다. 
+        
+        &lt;편집자 말&gt;
+        </div>
+        <blockquote>인용구! 사무실에서 도보로 5분 거리에 있는 그 식당은 크지 않았다. 활짝 열린 출입문 사이로 봤더니 4인용 테이블 6개가 꽉 찰 정도 넓이였다. 하지만 CCTV도 있고 보안 경비 시스템 등이 설치돼 있다. 그로 인한 안전 비용이 매월 10만원 정도 들어도, 사장님은 그 돈이 하나도 안 아깝다고 했다. “나 자신은 내가 지켜야 한다”며 사장님이 한 말은 이랬다. “사람이 무서워요.”
+        </blockquote>
+        <div class="wording">"워딩! 사람이 무서워요"</div>
+        <br><br>
+        <h3 class="article-wrap-subtit">중제1 - 내 이웃의 일상적인 공포</h3>
+        <div>그 곳에서 불과 1분 거리에 있는 카페 사장님도 무서운 일을 겪었다. 카페 인스타그램을 통해 특별한 이유 없이 DM을 보내고 매장을 방문하는 손님이 있었다고 했다. 그런 일이 일주일에 세 차례 정도 반복되면서 사장님의 두려움은 커졌다. 인스타그램에 소식을 올리자마자 매장에 나타나 게시물 이야기를 꺼내는 그 손님이 갈수록 무서워졌다고 했다.
+
+        카페를 뒤로 하고 왕복 2차선 횡단보도 하나를 건너면 호프집이 나타나는데 그 곳 사장님 역시 잊지 못하는 일이 있다. “함께 일하는 딸이 이리로 가면 거기를 쳐다보고 저리로 가면 거기를 또 쳐다보는 손님이 있었다“고 했다. 테이블 4개를 놓으면 꽉 차는 공간에서 번들거리는 그 시선이 엄마는 내내 불안했을지 모른다. 참다못한 엄마는 손님에게 ”왜 그러시냐, 그것도 성희롱“이라고 항의했지만, 돌아온 것은 'XXX'이란 욕설과 행패였다고 했다.
+
+        그런 행패를 2005년부터 현재까지 감내하는 또 다른 식당이 있다. 술만 들어가면 욕을 하고 다른 고객을 다 쫓아내는 손님이 “낮, 밤 안 가리고 온다”고 했다. 경찰에 수 십 번 신고했지만 소용이 없었다고 했다. 그저 그 때 뿐, 한 달 정도 지나면 어김없이 다시 나타나는 그 손님이 무섭다고 했다. 그 식당에서 길을 하나 건너면 꽃집이 보인다. 그 곳 사장님은 다짜고짜 화분을 차는 남성을 말리다가 전치 3주의 ‘묻지 마 폭행’을 당했다. 손가락이 부러졌고 뇌진탕 진단이 나왔다.
+
+        카페에서 호프집까지, 호프집에서 식당까지, 그리고 식당에서 꽃집까지 모두, 걸음 측정 어플리케이션으로 3분 거리 안에 위치한 가게들에서 일어난 일들이다. 다시 걸음을 옮겼다. 'OPEN' 또는 ‘영업중입니다’라는 팻말이 달리 보였다. 피해자들은 모두 여성 자영업자였고, 일터에서 위험한 손님들에게 공격당했다. 서울 마포구 망원동, &lt;오마이뉴스&gt; 사무실에서 불과 5분 여 거리에
+        현존하는 공포는 분명 일상적인 것이었다.</div>
+        <br><br><br>
+        <h3 class="article-wrap-subtit">중제2 - 102명 중 74명이 젠더폭력 공포 체감</h3>
+        <div>1993년 12월 12일 UN이 총회에서 채택한 ‘여성폭력철폐선언’은 여성에 대한 폭력을 “모든 영역에서 여성에게 신체적, 성적, 심리적 손상이나 괴로움을 주거나 줄 수 있는 젠더에 기반한 폭력 행위”로 규정하고 있다.
+
+        &lt;오마이뉴스&gt;는 여성 자영업자들을 상대로 이뤄지는 젠더폭력 실태를 파악하기 위해 4월 20일부터 8월 6일까지 망원동 지역 여성 자영업자 102명을 대상으로 대면 인터뷰와 설문 조사를 실시했다.
+
+        먼저 대면 인터뷰에서 여성 자영업자 56명은 영업 과정에서 남성으로부터 젠더폭력을 당한 경험이 있다고 응답했다. 손님이나 주취자 등에 의해 물리적 위협이나 폭력을 당한 경우가 31명으로 가장 많았고, 성희롱․성추행․스토킹 등 성적 폭력을 경험했다고 답한 자영업자도 19명이나 있었다. 욕설이나 폭언 등을 경험한 경우는 6명이었다.
+
+        이어진 설문조사에서 젠더폭력에 대한 체감도는 더 높게 나타났다. ‘남성 손님의 폭언, 폭행, 성희롱, 성추행, 스토킹 등으로 불안․위협․공포를 느낀 적이 있는가‘는 질문에 ’그렇다‘고 답한 여성 자영업자는 54명(52.9%)이었다. 행인, 주취자, 부랑자, 건물주, 종업원 등 손님 외 남성으로부터 젠더폭력 공포를 느낀 경우는 47명(46.1%)이었다. 두 가지 경우를 모두 경험한 자영업자는 27명(26.5%)이었다. 남성 손님이나 손님 외 남성에게 공포를 느낀 경우가 있다고 답한 망원동 지역 여성 자영업자는 102명 중 74명(72.5%)에 이르렀다. 망원동 지역 여성 자영업자 10명 중 7명 이상이 젠더폭력의 공포 속에서 영업을 지속하고 있는 셈이다.
+
+        이와 같은 결과는 업종별로 차이가 있었는데, 1인 자영업자 비율이 높은 업종일수록 젠더폭력 체감도도 높게 나타났다. (아래 표 참조)
+
+        부동산 중개업 8곳과 의류․신발 판매업 6곳의 경우는 조사 대상 모두에서 젠더폭력을 체감했다는 응답이 나왔다. 꽃집을 운영하는 여성 자영업자 경우도 조사 대상 10곳 중 8곳에서 젠더폭력을 체감했다고 답했다. 주점(9곳 중 7곳, 77.8%), 미용업(13곳 중 10곳, 76.9%), 카페․베이커리(19곳 중 13곳, 68.4%)도 젠더폭력 체감도가 높았다. 이들 업종에서 1인 자영업자가 차지하는 비율은 84.3%(65곳 중54곳)였다.
+
+        이와 달리 1인 자영업자 비율이 33.3%인 식당의 경우는 젠더폭력 체감도(13곳 중 7곳, 53.8%)도 상대적으로 낮았다. 조사 대상 15곳 중 10곳이 종업원을 고용하거나 가족의 도움을 받아 식당을 운영하고 있었다. 소품․공방의 경우도 그 체감도(13곳 중 7곳, 53.8%)가 다소 낮은 것으로 나타났는데 이는 여성 고객 비율이 다른 업종에 비해 상대적으로 높기 때문인 것으로 풀이된다.
+        </div>
+        <br><br><br>
+        <h3 class="article-wrap-subtit">중제3 - 여성 자영업자 젠더폭력의 3가지 특징</h3>
+        <div>취재 과정에서 여성 자영업자를 상대로 이뤄지는 젠더폭력에는 크게 세 가지 특징이 있다는 것을 확인할 수 있었다.
+        첫째, 한 번으로 끝나지 않는 경우가 적지 않았다.
+
+        “그 사람이 망원동 사람이라 계속 와요. 낮 밤 안 가리고 와요. 술이 두 병 들어가면 욕을 하고 손님들 다 쫓아냅니다. 어제도 그렇게 술을 먹어서... 그 사람 지인이 가게로 와서 타이르고 막 그래서 보냈어요. 그래도 그 사람과 싸울 수는 없잖아요. 경찰에 신고해도 그때뿐이에요. 한 달 정도 안 왔다가 또 와요. 오지 말라고 해도 매일 와요.” (망원동 지역 여성 자영업자 A씨 사례)
+
+        둘째, 아는 남자의 표적이 될 경우 더 위험했다.
+        “하루는 일이 끝나고 집에 가려고 하는데 남자 직원이 데려다 준다고 하더라고요. 그 직원 차를 타고 가고 있는데 갑자기 자기 집 방향으로 가는 거예요. 사장인데 한참 어리고 여자니까 만만하게 본거죠. 골목길에서 속도가 줄었을 때 차에서 뛰어내렸어요. 실랑이가 벌어졌고 그 직원이 나를 때렸어요. 저도 그 사람을 때렸어요. 경찰이 왔는데 제가 피의자가 됐어요. 휴대폰으로 그 사람을 때렸거든요. 성폭력이 일어나지 않았다고 경찰은 절대 그 상황이나 맥락을 고려하지 않더라고요. 결국 합의했죠. 그 사람의 잘못은 묻지 못했어요.” (망원동 지역 여성 자영업자 B씨 사례)
+
+        그래도 문을 닫을 수는 없다. “빵집 안에서 담배를 피우며 행패를 부리는 일”(C씨 사례)을 당했어도, “한 시간 동안이나 ‘이야, 이쁘다’ 혼잣말을 되풀이하며 가게 앞에 버티고 있는 취객 때문에 다른 손님이 무서워서 들어오지 못했던 일”(D씨 사례)을 당했어도, “머리 잘라주면 뽀뽀해주겠다”고 성희롱을 하거나 “가게 앞에서 어떤 남자가 가게를 향해 갑자기 머그컵을 던지는 일”(E씨 사례)을 당했어도 생업을 멈출 수는 없는 일이다. 그래서 셋째, 여성 자영업자에게 ‘열린 문’은 충분히 공포스러운 것이었다. 이런 공포는 과연 망원동 지역에만 있는 것일까.</div>
+        <br><br><br>
+        <h3 class="article-wrap-subtit">중제4 - “첫 걸음은 자영업자 젠더폭력 범죄 통계”</h3>
+        <div>여성은 바닥을 청소하고 있었다. 그 모습을 두 남성이 지켜보고 있었다. 한 남성이 자리에서 일어나더니 갑자기 발로 여성의 얼굴을 걷어찼다. 또 한 번, 다시 또 한 번, 심지어 남성은 여성을 못 움직이게 잡고 무릎으로 얼굴을 가격했다. 그렇게 십 여 차례 폭행이 약 1분 남짓한 시간 동안 이어졌다. 2019년 2월 세상을 분노하게 만들었던 금천구 시흥동 식당 폭행 사건 CCTV 영상 모습이다. 가해자는 영업장을 다시 찾은 ‘위험한 손님’이었다. 경찰 조사에서 가해자가 밝힌 폭행 이유는 ‘호감을 표시했는데 무시당했다’는 것이었다. 천만다행으로 피해자는 목숨을 건졌지만, 그렇지 못한 경우도 적지 않았다.
+
+        그로부터 석 달 후인 2019년 5월, 충남 서천 빵집에서 주인이 60대 남성이 휘두른 흉기에 찔려 숨지는 사건이 일어났다. 그 남성은 빵집 주인을 상대로 10년 간 폭행과 협박 그리고 스토킹을 일삼았다. 그로 인해 감옥에 갔다가 다시 세상으로 돌아와 범행을 저질렀다. 2019년 6월에는 대전 모텔에서 주인이 숙박료 문제로 말다툼을 하던 손님의 칼에 찔려 숨졌다. 2019년 8월에도 울산 식당에서 살인 사건이 일어났으며 그로부터 일주일도 되지 않아 서울 주점에서 살인 사건이 일어났다. 그 해 11월에는 부산에서, 다음 해인 2020년 2월에는 경기 김포에서 자영업자가 각각 살해됐다. 2020년 5월에는 경남 창원에서 10년 스토킹 끝에 식당 주인을 죽이는 일이 벌어졌고, 8월에는 대구 식당에서 주인이 전 남자 친구에게 교제살인을 당하는 사건이 일어났다. 올해 3월에는 인천 한 주점에서 70대 남성이 50대 자매에게 둔기를 휘둘러 언니를 숨지게 하고 동생에게 중상을 입히는 사건이 일어난 바 있다.
+        
+        이들 피해자의 공통점 역시 모두 여성 자영업자란 것이다. 이런 사건이 되풀이해서 발생하고 있는데도 여성 자영업자 범죄와 관련해서는 별도의 공식 통계조차 없는 것이 현실이다.
+
+        여성 자영업자를 대상으로 한 범죄를 분석한 논문(여자 혼자 장사하기 : 범죄 기회 차단을 위한 젠더화된 사업 전략과 효과성)을 집필한 추지현 서울대 사회학과 교수는 “현재 범죄 통계에서는 성인지 통계가 너무 안 나오고 있다, 정책적 차원에서라도 성인지 통계를 확장․공표해야 한다”면서 “그래야 이것이 문제임을 인식하고, 연구가 나오고 정책이 나올 수 있다, 자영업자 대상 범죄를 젠더폭력으로 바라보고 성인지 통계를 내는 것, 그것이 첫걸음”이라고 주장했다.
+
+        허민숙 국회 입법조사처 조사관은 “여성 자영업자 10명 중 7명 이상이 폭력적 남성에 의한 위협이나 공포를 느끼고 있다는 것은 상당히 높은 비율”이라면서 “폭력 피해자 대다수가 여성이고 가해자 대다수가 남성이라는 사실의 핵심은 차별을 기반으로 두고 있다는 것이다, 이는 명백한 젠더에 기반한 폭력”이라고 강조했다.</div>
+      </div>
+      <br><br>
+      <div class="table-graph">
+        <a href="http://www.ohmynews.com/NWS_Web/Event/Premium/at_pg.aspx?CNTN_CD=A0002674988">그래프 표 영역<br>그래프 표 영역<br>그래프 표 영역<br>그래프 표 영역<br>그래프 표 영역<br>그래프 표 영역<br></a>
+      </div>
+      <br><br>
+      <div class="photo-wrap large">
+        <img src="http://ojsfile.ohmynews.com/PHT_IMG_FILE/2020/1113/IE002719982_PHT.jpg" alt="이미지">
+        <p class="caption">사진을 설명하는 캡션이 들어갑니다 ⓒ홍길동</p>
+      </div>
+      <br><br>
+      <div class="photo-wrap normal">
+        <img src="http://ojsfile.ohmynews.com/PHT_IMG_FILE/2020/1113/IE002719982_PHT.jpg" alt="이미지">
+        <p class="caption">사진을 설명하는 캡션이 들어갑니다 ⓒ홍길동</p>
+      </div>
+      <br><br>
+      <div class="photo-wrap small">
+        <img src="http://ojsfile.ohmynews.com/PHT_IMG_FILE/2020/1113/IE002719961_PHT.jpg" alt="이미지">
+        <p class="caption">사진을 설명하는 캡션이 들어갑니다 ⓒ홍길동</p>
+      </div>
+      <div class="judgment-wrap">
+        <div class="judgment-block">
+          <div class="judgment-img">
+            <img src="//ojsfile.ohmynews.com/dst/2020/abuse/02_54/02_01.jpg">
+          </div>
+          <div class="judgment-text">
+            <h3>1. 판결문 텍스트 제목</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, tempore dolorem dolorum expedita, libero optio perspiciatis corrupti aliquid quam veritatis voluptas aspernatur, rerum dolores ipsum esse. Nulla natus beatae perspiciatis!</p>
+
+            <h3>1. 판결문 텍스트 제목</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, tempore dolorem dolorum expedita, libero optio perspiciatis corrupti aliquid quam veritatis voluptas aspernatur, rerum dolores ipsum esse. Nulla natus beatae perspiciatis!</p>
+          </div>
+        </div>
+        <div class="judgment-block">
+          <div class="judgment-img">
+            <img src="//ojsfile.ohmynews.com/dst/2020/abuse/02_54/02_01.jpg">
+          </div>
+          <div class="judgment-text">
+            <h3>1. 판결문 텍스트 제목</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, tempore dolorem dolorum expedita, libero optio perspiciatis corrupti aliquid quam veritatis voluptas aspernatur, rerum dolores ipsum esse. Nulla natus beatae perspiciatis!</p>
+
+            <h3>1. 판결문 텍스트 제목</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, tempore dolorem dolorum expedita, libero optio perspiciatis corrupti aliquid quam veritatis voluptas aspernatur, rerum dolores ipsum esse. Nulla natus beatae perspiciatis!</p>
+          </div>
+        </div>
+      </div>
+      <div class="message-wrap">
+        <div class="message reveal-message">“출근하자. 미용실 쉬나?”</div>
+        <div class="message reveal-message">“출근하네. 아들을 보초 세우나보네. 사진 찍어봐야 무슨 소용 있냐 ^^”</div>
+        <div class="message reveal-message">“다른 놈들은 미용실 와서 커피 먹고 앉았는데 나는 못 오게 하고.”</div>
+        <div class="message reveal-message">“가게 앞에 밥 처먹으러 다니니.”</div>
+      </div>
+
+      <div class="postit-wrap">
+        <h2>가족에게 하고 싶은 말</h2>
+        <div class="swiper postit-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide postit">
+              <p>어려운 경기 때문에 가족의 도움을 받고 경영하고 있는 상태가 미안하다.</p>
+              <strong>식당-06</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>엄마 ♡해</p>
+              <strong>식당-10</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>항상 믿고 지원해줘서 감사합니다.</p>
+              <strong>카페-04</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>사랑해~</p>
+              <strong>카페-05</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>남편, 슈퍼맨도 아닌데 112처럼 언제든 달려와주고 싸워주고 돕는다. 늘 미안하고 고맙다.</p>
+              <strong>카페-06</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>돈 많이 벌어오세요. 나는 이미 틀렸어요 ㅠ^ㅠ</p>
+              <strong>카페-07</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>사랑해~</p>
+              <strong>카페-09</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>밀어주고, 밀어주고 ^^, 끌어줘서 항상 고마워요</p>
+              <strong>카페-11</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>사랑해요.</p>
+              <strong>카페-12</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>행복하세요!</p>
+              <strong>카페-14</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>어미가 자녀에게. 힘내자! 사랑해～♡</p>
+              <strong>카페-17</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>잘 챙겨주지 못해서 미안해...</p>
+              <strong>미용-01</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>가족에겐 항상 미안하고 고맙다. 영업 스트레스를 가족에게 끼치는 경우가 많은데 잘 참아주시고</p>
+              <strong>미용-03</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>코로나 끝날 줄 알았는데 생활 일부분이 되어 슬퍼. 최선 다해서 이 어려운 시기 잘 이겨내자.</p>
+              <strong>미용-04</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>지금처럼만 사형제 건강하고 아무 탈 없길.</p>
+              <strong>미용-13</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>모두 조심하고 슬기롭게 잘 지나가자. 대인 관계, 건강 신경쓰면서 잘 지내자</p>
+              <strong>꽃집-02</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>빨리 코로나 끝나서 모두 제자리 찾았으면. 그때까지 가게도 파이팅!!</p>
+              <strong>꽃집-04</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>나의 아들 딸아! 주어진 일에 최선 다하고 재미있게 건강하게 살아라. 사랑한다.</p>
+              <strong>꽃집-07</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>건강했으면. 행복했으면.</p>
+              <strong>의류-05</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>매출 절반 줄었는데 가족들 십시일반 도움으로 생활비. 진심 고맙고 어려운 고비 잘 넘기자.</p>
+              <strong>기타-02</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>늘 고마워요 :)</p>
+              <strong>기타-04</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>힘든 시기 이해해줘서 고맙지요.</p>
+              <strong>소품-01</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>파이팅!</p>
+              <strong>소품-05</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>신경 써 주셔서 감사해요 ^^</p>
+              <strong>소품-12</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>가족의 응원이 있어서 열심히 일할 수 있습니다. 사랑합니다.</p>
+              <strong>중개-03</strong>
+            </div>
+            <div class="swiper-slide postit">
+              <p>암환자로 살고 있는 남편 조금 더 건강하길~ 나의 오른 팔 큰아들 속히 짝꿍 찾길~</p>
+              <strong>중개-06</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="article-wrap byline">
+        발행일시 : 2020.11.26 07:04
+        저작권자(c) 오마이뉴스(시민기자), 무단 전재 및 재배포 금지
+      </div>
+      <div class="closing-wrap">
+        <div class="title"><img src="./images/img-title-k.svg" alt="열린문"></div>
+        <p>취재 이주연, 이정환
+          본 기획물은 정부광고수수료로 조성된 언론진흥기금의 지원을 받았습니다.
+          Designed and built by 이공이공</p>
+      </div>
+    </div>
+    <div class="series-wrap">
+      <h3 class="hahmlet"><strong>열린 문</strong> 다른 이야기</h3>
+      <ul>
+        <li>
+          <a href="">
+            <span class="thumb"
+              style="background-image: url('https://content.surfit.io/thumbs/image/wDzv3/p1zLJ/1780937952618cce5ab1d27.jpg/cover-center-2x.webp')"></span>
+            <h4>“꽃집의 아가씨는 예뻐요~” 이 노래가 섬뜩한 이유 비 오는 대낮 만취한 남자의 방문... 사장님은 가게를 옮겼다</h4>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="thumb"
+              style="background-image: url('https://content.surfit.io/thumbs/image/wDzv3/p1zLJ/1780937952618cce5ab1d27.jpg/cover-center-2x.webp')"></span>
+            <h4>“꽃집의 아가씨는 예뻐요~” 이 노래가 섬뜩한 이유 비 오는 대낮 만취한 남자의 방문... 사장님은 가게를 옮겼다</h4>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="thumb"
+              style="background-image: url('https://content.surfit.io/thumbs/image/wDzv3/p1zLJ/1780937952618cce5ab1d27.jpg/cover-center-2x.webp')"></span>
+            <h4>“꽃집의 아가씨는 예뻐요~” 이 노래가 섬뜩한다</h4>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="thumb"
+              style="background-image: url('https://content.surfit.io/thumbs/image/wDzv3/p1zLJ/1780937952618cce5ab1d27.jpg/cover-center-2x.webp')"></span>
+            <h4>“꽃집의 아가씨는 예뻐요~” 이 노래가 섬뜩한 이유 비 오는 대낮 만취한 남자의 방문... 사장님은 가게를 옮겼다</h4>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="thumb"
+              style="background-image: url('https://content.surfit.io/thumbs/image/wDzv3/p1zLJ/1780937952618cce5ab1d27.jpg/cover-center-2x.webp')"></span>
+            <h4>“꽃집의 아가씨는 예뻐요다</h4>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="thumb"
+              style="background-image: url('https://content.surfit.io/thumbs/image/wDzv3/p1zLJ/1780937952618cce5ab1d27.jpg/cover-center-2x.webp')"></span>
+            <h4>“꽃집의 아가씨는 예뻐요~” 이 노래가 섬뜩한 이유 비 오는 대낮 만취한 남자의 방문... 사장님은 가게를 옮겼다</h4>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="thumb"
+              style="background-image: url('https://content.surfit.io/thumbs/image/wDzv3/p1zLJ/1780937952618cce5ab1d27.jpg/cover-center-2x.webp')"></span>
+            <h4>“꽃집의 아가씨는 예뻐요~” 이 노래가 섬뜩한 이유 비 오는 대낮 만취 사장님은 가게를 옮겼다</h4>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="thumb"
+              style="background-image: url('https://content.surfit.io/thumbs/image/wDzv3/p1zLJ/1780937952618cce5ab1d27.jpg/cover-center-2x.webp')"></span>
+            <h4>“꽃집의 아가씨는 예뻐요~” 이 노래가 사장님은 가게를 옮겼다</h4>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 이공이공 열린문 스크립트-->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    //클릭시 해당 글로 스크롤 이동
+    $('a').on('click', function (event) {
+      var target = $('#' + $(this).attr('href'));
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+      }
+    });
+
+    //스크롤시 나타나기
+    var blockUp = {
+      delay: 400,
+      interval: 500,
+      distance: "20px",
+      origin: "top",
+      duration: 2000,
+    };
+    ScrollReveal().reveal(".reveal", blockUp);
+
+    //스크롤시 메세지 나타나기 
+    var messageUp = {
+      delay: 500,
+      interval: 2000,
+      distance: "20px",
+      origin: "top",
+      duration: 1000,
+    };
+    ScrollReveal().reveal(".reveal-message", messageUp);
+  </script>
+  <script>
+    var swiper = new Swiper(".postit-swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 24,
+      freeMode: true,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+</body>
+
+</html>

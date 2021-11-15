@@ -223,7 +223,7 @@ td {
 }
 
 /*=============메인 타이틀 영역=============*/
-.dolligo-wrap .title-wrap{
+.dolligo-wrap .main-title-wrap{
   position: relative;
   display: flex;
   justify-content: center;
@@ -235,7 +235,7 @@ td {
   background-position: 50% 40vh;
   background-size: 250%;
 }
-.dolligo-wrap .title-wrap .title{
+.dolligo-wrap .main-title-wrap .title{
   background-image: url(./images/img-title.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -243,7 +243,7 @@ td {
   height: 15%;
   margin-top: 30%;
 }
-.dolligo-wrap .title-wrap .scroll-btn{
+.dolligo-wrap div[class*="-title-wrap"] .scroll-btn{
   position: absolute;
   bottom: 20px;
   left: 0;
@@ -260,29 +260,29 @@ td {
 }
 
 @media (min-width: 1024px) {
-  .dolligo-wrap .title-wrap{
+  .dolligo-wrap .main-title-wrap{
     background-size: contain;
     background-position: 50% 40vh;
   }
-  .dolligo-wrap .title-wrap .title{
+  .dolligo-wrap .main-title-wrap .title{
     margin-top: 6em;
     height: 7em;
   }
 }
 @media (min-width: 1440px){
-  .dolligo-wrap .title-wrap{
+  .dolligo-wrap .main-title-wrap{
     background-position: 50% 40vh;
   }
-  .dolligo-wrap .title-wrap .title{
+  .dolligo-wrap .main-title-wrap .title{
     margin-top: 8em;
     height: 9em;
   }
 }
 @media (min-width: 1700px){
-  .dolligo-wrap .title-wrap{
+  .dolligo-wrap .main-title-wrap{
     background-position: 50% 32vh;
   }
-  .dolligo-wrap .title-wrap .title{
+  .dolligo-wrap .main-title-wrap .title{
     margin-top: 10em;
   }
 }
@@ -294,7 +294,7 @@ td {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 100px 20px;
+  padding: 100px 20px 200px;
 }
 .dolligo-wrap .section{
   margin-bottom: 200px;
@@ -352,7 +352,7 @@ td {
 
 /*=============게시판 형식 영역=============*/
 .dolligo-wrap .scroll-box{
-  background: #FFFFFF;
+  background: #FFF;
   border: 1px solid #E6E6E6;
   box-sizing: border-box;
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
@@ -421,7 +421,7 @@ td {
 
 .dolligo-wrap .board-box{
   position: relative;
-  background: #FFFFFF;
+  background: #FFF;
   border: 1px solid #E6E6E6;
   box-sizing: border-box;
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
@@ -508,25 +508,298 @@ td {
 }
 
 
+/*=============기사 타이틀 영역=============*/
+.navbar-header .serially_titl .tt01{
+  font-size: inherit;
+  color: inherit;
+}
+.navbar-header .serially_titl .tt02{
+  font-size: inherit;
+  color: inherit;
+  font-weight: normal;
+  opacity: 0.5;
+}
+.dolligo-wrap .article-title-wrap{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #171C23;
+  padding: 0 24px 10vh;
+}
+.dolligo-wrap .article-title-wrap img{
+  width: 320px;
+}
+.dolligo-wrap .article-title-wrap h2{
+  font-size: 30px;
+  color: #fff;
+  margin-top: calc(-325px / 2);
+}
+.dolligo-wrap .article-title-wrap h3{
+  font-size: 15px;
+  font-weight: normal;
+  color: #FFF;
+  margin-top: 16px;
+}
+
+@media (min-width: 1024px) {
+  .navbar-header .serially_titl{
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    margin-left: 24px;
+  }
+  .dolligo-wrap .article-title-wrap{
+    padding: 0 0 10vh;
+    min-height: 700px;
+  }
+  .dolligo-wrap .article-title-wrap img{
+    width: 620px;
+  }
+  .dolligo-wrap .article-title-wrap h2{
+    font-size: 54px;
+    margin-top: calc(-630px / 2);
+  }
+  .dolligo-wrap .article-title-wrap h3{
+    font-size: 19px;
+    margin-top: 32px;
+  }
+}
 
 /*=============기사 영역=============*/
 .dolligo-wrap .article-wrap{
   width: 100%;
   max-width: 652px;
-  text-align: left;
-  font-size: 18px;
+  text-align: justify;
+  font-size: 15px;
   line-height: 1.7;
-  word-break: keep-all;
+  word-break: break-all;
   white-space: pre-line;
 }
+.dolligo-wrap .editors{
+  font-size: 15px;
+  text-align: center;
+  color: #777;
+  padding: 30px;
+  border-top: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+}
+.dolligo-wrap blockquote{
+  position: relative;
+  font-family: "Noto Serif KR", serif;
+  text-align: center;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+  padding: 50px 30px 30px;
+}
+.dolligo-wrap blockquote::before{
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-image: url(./images/icon-quote.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50px/2);
+}
+.dolligo-wrap .wording{
+  font-weight: bold;
+  padding: 2px 0 2px 24px;
+  border-left: 2px solid #777;
+}
+.dolligo-wrap .article-wrap > .article-wrap-subtit{
+  font-size: 20px;
+  color: #161B22;
+  text-align: left;
+}
+.dolligo-wrap .article-wrap.byline{
+  font-size: 13px;
+}
+.dolligo-wrap .table-graph{
+  width: 100%;
+  max-width: 652px;
+}
+.dolligo-wrap .photo-wrap{
+  text-align: center;
+}
+.dolligo-wrap .photo-wrap.large{
+  max-width: 988px;
+}
+.dolligo-wrap .photo-wrap.normal{
+  max-width: 652px;
+}
+.dolligo-wrap .photo-wrap.small{
+  max-width: 500px;
+}
+.dolligo-wrap .photo-wrap img{
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.dolligo-wrap .photo-wrap .caption{
+  font-size: 13px;
+  color: #999;
+  margin-top: 8px;
+}
 
+@media (min-width: 1024px) {
+  .dolligo-wrap .article-wrap{
+    font-size: 18px;
+  }
+  .dolligo-wrap .article-wrap > .article-wrap-subtit{
+    font-size: 26px;
+  }
+}
+
+/*=============판결문 영역=============*/
+.judgment-wrap{
+  text-align: center;
+  width: calc(100% + 40px);
+  padding: 10%;
+  background: #333;
+  margin: 80px -20px;
+}
+.judgment-wrap .judgment-block{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.judgment-wrap .judgment-block .judgment-img{
+  width: 60%;
+  padding: 0 10%;
+}
+.judgment-wrap .judgment-block .judgment-img img{
+  width: 100%;
+}
+.judgment-wrap .judgment-block .judgment-text{
+  position: relative;
+  font-family: "Noto Serif KR", serif;
+  text-align: left;
+  width: 40%;
+  color: #fff;
+}
+.judgment-wrap .judgment-block .judgment-text h3{
+  font-size: 1.3em;
+  color: inherit;
+  margin-bottom: 10px;
+}
+.judgment-wrap .judgment-block .judgment-text p{
+  font-size: 0.9em;
+  color: inherit;
+  line-height: 1.77;
+  margin-bottom: 30px;
+  word-break: keep-all;
+}
+
+@media (max-width: 768px) {
+  .judgment-wrap{
+    padding: 0;
+  }
+  .judgment-wrap .judgment-block{
+    display: block;
+    width: 95%;
+    height: 200vh;
+    margin: auto;
+  }
+  .judgment-wrap .judgment-block .judgment-img{
+    margin: auto;
+    top: 0;
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    z-index: 1;
+    transform: translateZ(0);
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  .judgment-wrap .judgment-block .judgment-text{
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+    transform: translateZ(0px);
+    border: 1px solid #000;
+  }
+}
+
+
+/*=============문자메세지 영역=============*/
+.message-wrap{
+  width: 100%;
+  max-width: 652px;
+  text-align: left;
+  padding: 100px 0;
+}
+.message-wrap .message{
+  display: inline-block;
+  padding: 16px 20px 22px;
+  border-radius: 0 20px 20px 20px;
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+}
+
+
+/*=============가족 포스트잇 영역=============*/
+.postit-wrap{
+  width: calc(100% + 40px);
+  margin: 0 -20px;
+  text-align: left;
+  padding: 100px 0;
+  overflow: hidden;
+}
+.postit-wrap h2{
+  font-size: 18px;
+  max-width: 652px;
+  margin-bottom: 24px;
+  margin-left: 20px;
+}
+.postit-wrap .postit-swiper{
+  margin-left: 20px;
+}
+.postit-wrap .postit{
+  width: 240px;
+  padding: 20px 24px 28px;
+  background: #F8F8F8;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.18);
+}
+.postit-wrap .postit p{
+  font-size: 17px;
+  line-height: 1.5;
+  color: #171C23;
+  margin-bottom: 24px;
+}
+.postit-wrap .postit strong{
+  font-weight: bold;
+  font-size: 13px;
+  color: #888;
+}
+
+@media (min-width: 1024px) {
+  .postit-wrap h2{
+    font-size: 26px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+}
 
 
 /*=============클로징 영역=============*/
 .dolligo-wrap .closing-wrap{
-  margin-top: 200px;
+  margin-top: 100px;
   display: inline-block;
-  text-align: left;
   text-align: center;
 }
 
@@ -614,3 +887,5 @@ td {
     filter: grayscale(0);
   }
 }
+
+
