@@ -295,6 +295,10 @@ td {
   align-items: center;
   text-align: center;
   padding: 100px 20px 200px;
+  background-image: url(./images/img-texture.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .dolligo-wrap .section{
   margin-bottom: 200px;
@@ -528,8 +532,33 @@ td {
   text-align: center;
   width: 100%;
   height: 100vh;
-  background-color: #171C23;
   padding: 0 24px 10vh;
+  background: linear-gradient(-20deg, #0D0F13, #252E39, #0D0F13, #252E39);
+  background-size: 400% 400%;
+	animation: gradient 13s ease infinite;
+}
+.dolligo-wrap .article-title-wrap::before{
+  content: "";
+  background-image: url(./images/img-texture.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.15;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 .dolligo-wrap .article-title-wrap img{
   width: 320px;
