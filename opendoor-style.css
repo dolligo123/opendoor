@@ -1,72 +1,4 @@
-html,
-body,
-div,
-span,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-abbr,
-address,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-samp,
-small,
-strong,
-sub,
-sup,
-var,
-b,
-i,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -77,17 +9,7 @@ video {
 body {
   line-height: 1;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
   display: block;
 }
 ul li {
@@ -161,20 +83,13 @@ em,
 span {
   display: inline-block;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
   font-size: 21px;
   line-height: 1.2;
   font-weight: 900;
   color: #000;
 }
-li,
-th,
-td {
+li,th,td {
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
@@ -195,8 +110,7 @@ a {
   font-weight: 400;
   color: #000;
 }
-th,
-td {
+th,td {
   font-size: 14px;
   vertical-align: middle;
   text-align: left;
@@ -526,7 +440,8 @@ td {
   padding: 0 24px 10vh;
   background: linear-gradient(-20deg, #0D0F13, #252E39, #0D0F13, #252E39);
   background-size: 400% 400%;
-	animation: gradient 13s ease infinite;
+	-webkit-animation: gradient 13s ease infinite;
+	        animation: gradient 13s ease infinite;
 }
 .dolligo-wrap .article-title-wrap::before{
   content: "";
@@ -539,6 +454,17 @@ td {
   top: 0;
   bottom: 0;
   opacity: 0.15;
+}
+@-webkit-keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 @keyframes gradient {
 	0% {
@@ -596,7 +522,7 @@ td {
   max-width: 652px;
   text-align: justify;
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.8;
   word-break: break-all;
   white-space: pre-line;
 }
@@ -659,9 +585,7 @@ td {
   left: calc(50% - 50px/2);
 }
 .dolligo-wrap .wording{
-  font-weight: bold;
-  padding: 2px 0 2px 24px;
-  border-left: 2px solid #777;
+  color: #a56363;
 }
 .dolligo-wrap .article-wrap > .article-wrap-subtit{
   font-size: 20px;
@@ -695,6 +619,7 @@ td {
 .dolligo-wrap .photo-wrap .caption{
   font-size: 13px;
   color: #999;
+  text-align: right;
   margin-top: 8px;
 }
 
@@ -900,7 +825,8 @@ td {
 .dolligo-wrap .series-wrap ul li a{
   display: block;
   opacity: 0.7;
-  filter: grayscale(0.7);
+  -webkit-filter: grayscale(0.7);
+          filter: grayscale(0.7);
   transition: 0.3s;
 }
 .dolligo-wrap .series-wrap li .thumb{
@@ -935,8 +861,7 @@ td {
 @media (min-width: 1200px) {
   .dolligo-wrap .series-wrap ul li a:hover{
     opacity: 1;
-    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0);
   }
 }
-
-
